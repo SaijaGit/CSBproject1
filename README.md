@@ -51,7 +51,7 @@ NOTE! The code with Injection flaw does not work if you have already fixed the f
 
 ### How to perform the injection:
 
-1. Write a following secret note into "Create a New Secret Note" text area: 1'; DROP TABLE 'SecretNotes_secretnote'; --'
+1. Write a following secret note into "Create a New Secret Note" text area: ```1'; DROP TABLE 'SecretNotes_secretnote'; --'```
 
 2. Click "Save"
 
