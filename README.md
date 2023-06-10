@@ -144,7 +144,7 @@ As a result of fixing the cryptographic fault, the string-format notes become by
 
 2. Modify the format of the notes in the database in [models.py](./SecretNotesApp/SecretNotes/models.py): 
 	- Comment the line 9
-	- Remove the comment from the following line 15
+	- Remove the comment from the line 15
 
 3. After that run the following in the command line to migrate the changes into database:
 	- ```python manage.py makemigrations SecretNotes```
