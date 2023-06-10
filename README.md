@@ -84,7 +84,7 @@ https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b29
 
 Broken Access Control is a security flaw, where unauthorized access is allowed to server resources or functionalities. For example, a web application might expose user-specific data, if the user manipulates query parameters or path variables. While the application requires the user to be signed in, it fails to ensure they have rights for specific actions.
 
-The Secret Notes App has a "Delete" button for each note, which is used to delete the note. In this way, the user can delete only their own notes. However, it is also possible to delete notes by passing the note_id of as a URL parameter from the address bar of the browser. The Broken Access Control vulnerability is caused by the fact that the app does not check whether the note to be deleted belongs to the user who is signed into the application.
+The Secret Notes App has a "Delete" button for each note, which is used to delete the note. In this way, the user can delete only their own notes. However, it is also possible to delete notes by passing the note_id as a URL parameter from the address bar of the browser. The Broken Access Control vulnerability is caused by the fact that the app does not check whether the note to be deleted belongs to the user who is signed into the application.
 
 
 ### How to exploit the Broken Access Control vulnerability:
