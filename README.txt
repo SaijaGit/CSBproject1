@@ -1,8 +1,8 @@
 # Cyber Security Base 2023: Project I
 
-Link to the Github repository of the project: 
-
+Link to the Github repository of the project: https://github.com/SaijaGit/CSBproject1
 This report with links can be found in the project's readme file.
+
 This project contains 4 errors from the OWASP 2021 list and CSRF. 
 
 
@@ -33,7 +33,8 @@ User: username = alice and password = 123
 
 ## FLAW 1: Injection
 
-exact source link pinpointing flaw 1...
+Link:
+https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/views.py#L69
 
 
 ### Description
@@ -64,8 +65,8 @@ NOTE! The code with Injection flaw does not work if you have already fixed the f
 
 Use "noteToDelete.delete()" instead of writing SQL queries straight with "cursor.executescript". cursor.executescript does not check the data, it just sends it to database. noteToDelete.delete() uses Django's own methods to delete data, and they are secured against injection. Also this approach does not send any text from the note to the database, as it only uses id-number to identify the note to remove, so it is safer also this way.
 
-	Comment away lines: views.py 58-61
-	Remove the comments from the lines: wiews.py 64
+	Comment away lines: views.py 69-71
+	Remove the comments from the lines: wiews.py 74
 
 In the project's repository on Github, there is a backup for the database under the name db2.sqlite3, which you can use to restore the database file and continue using the program. 
 
@@ -73,7 +74,8 @@ In the project's repository on Github, there is a backup for the database under 
 
 
 ## FLAW 2: Broken Access Control
-exact source link pinpointing flaw 2...
+Link:
+https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/views.py#L61
 
 
 ### Description
@@ -92,18 +94,19 @@ The number in the end is the id number of the note to be deleted, which of cours
 ### How to fix it
 
 This vulnerability can be removed by adding a check that the note is deleted only if it is owned by the user that is signed in:
-	Remove comments from views.py lines 72-76
+	Remove comments from views.py lines 62-66
 
 
 
 
 ## FLAW 3: CSRF (Cross-Site Request Forgery)
-Link:
+Links: https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/views.py#L14
+https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/templates/SecretNotes/index.html#L133
 
 
 ### Description
 
-CSRF is enables unauthorized requests from a different site. This can happen, if the user of the app is signed in the app, but interacts with a malicious web page which secretly sends a request to the app. If the CSRF is not checked, the request from the foreign page is executed, because it is interpreted as valid based on the user's cookie. To prevent this most frameworks now have built-in CSRF defenses and browsers protect cookies more seriously.
+CSRF enables unauthorized requests from a different site. This can happen, if the user of the app is signed in the app, but interacts with a malicious web page which secretly sends a request to the app. If the CSRF is not checked, the request from the foreign page is executed, because it is interpreted as valid based on the user's cookie. To prevent this most frameworks now have built-in CSRF defenses and browsers protect cookies more seriously.
 
 
 ### How to fix it
@@ -112,13 +115,14 @@ Enable the csrf_token in the “Add” form of the index.html by removing the co
 	Remove comment tags from index.html lines 132 & 134.
 
 Comment out the @csrf_exempt from the addView function:
-	Comment out the line 20 in views.py
+	Comment out the line 14 in views.py
 
 
 
 
 ## FLAW 4: Cryptographic Failures
 Link:
+https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/views.py#L11
 
 
 ### Description
@@ -147,14 +151,14 @@ As a result of fixing the cryptographic fault, the string-format notes become by
 4. If you encounter problems, you can remove the table using the SQLite command "DROP TABLE 'SecretNotes_secretnote';" or copy the database backup file db2_encrypted.sqlite3 and rename it to db.sqlite3. After this run the commands from step 3.
 
 5. Add encryption to views.py by:
-	commenting out lines 32 and 57
-	removing comments on lines 12, 24-30, 61 and 110-116
-
+	commenting out lines 29 and 52
+	removing comments on lines 11, 24-26, 55 and 99-105
 
 
 
 ## FLAW 5: Security Misconfiguration
 Link:
+https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotesApp/settings.py#L94
 
 
 ### Description
@@ -174,5 +178,4 @@ The problem with this application is that there are no requirements set for pass
 3. Go to administration page on the address http://localhost:8000/admin and change password to match the new requirements. 
 
 4. The passwords of the other users can also be changed on this page.
-
 
