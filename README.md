@@ -8,8 +8,10 @@ This project contains 4 errors from the OWASP 2021 list and CSRF.
 ### Installation instructions: 
 
 1. Download the project from Github 
-2. Start the server with the command ```python manage.py runserver```
-3. Open the application in a browser at http://localhost:8000/ 
+2. The project is implemented with Python and Django
+3. You also need the cryptography package, which you can install with the command ```pip install cryptography```
+4. Start the server with the command ```python manage.py runserver```
+5. Open the application in a browser at http://localhost:8000/ 
 
 
 ### Instructions for the database: 
