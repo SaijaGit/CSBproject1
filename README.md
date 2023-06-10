@@ -1,6 +1,6 @@
 # Cyber Security Base 2023: Project I
 
-Link to the Github repository of the project: 
+Link to the Github repository of the project: https://github.com/SaijaGit/CSBproject1
 
 This report with links can be found in the project's readme file.
 This project contains 4 errors from the OWASP 2021 list and CSRF. 
