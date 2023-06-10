@@ -102,13 +102,13 @@ This vulnerability can be removed by adding a check that the note is deleted onl
 
 
 ## FLAW 3: CSRF (Cross-Site Request Forgery)
-Links: https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/views.py#L13
+Links: https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/views.py#L14
 https://github.com/SaijaGit/CSBproject1/blob/570792ac97bb7ba33810a24c1a8620e0b2985c50/SecretNotesApp/SecretNotes/templates/SecretNotes/index.html#L133
 
 
 ### Description
 
-CSRF is enables unauthorized requests from a different site. This can happen, if the user of the app is signed in the app, but interacts with a malicious web page which secretly sends a request to the app. If the CSRF is not checked, the request from the foreign page is executed, because it is interpreted as valid based on the user's cookie. To prevent this most frameworks now have built-in CSRF defenses and browsers protect cookies more seriously.
+CSRF enables unauthorized requests from a different site. This can happen, if the user of the app is signed in the app, but interacts with a malicious web page which secretly sends a request to the app. If the CSRF is not checked, the request from the foreign page is executed, because it is interpreted as valid based on the user's cookie. To prevent this most frameworks now have built-in CSRF defenses and browsers protect cookies more seriously.
 
 
 ### How to fix it
@@ -150,7 +150,7 @@ As a result of fixing the cryptographic fault, the string-format notes become by
 	- ```python manage.py makemigrations SecretNotes```
 	- ```python manage.py migrate```
 
-4. If you encounter problems, you can remove the table using the SQLite command ```DROP TABLE 'SecretNotes_secretnote';``` or copy the database backup file db2_encrypted.sqlite3 and rename it to db.sqlite3. After this run the commands from step 3.
+4. If you encounter problems, you can remove the table using the SQLite command ```DROP TABLE 'SecretNotes_secretnote';``` or copy the database backup file [db2_encrypted.sqlite](./SecretNotesApp/db2_encrypted.sqlite3) and rename it to db.sqlite3. After this run the commands from step 3.
 
 5. Add encryption to [views.py](./SecretNotesApp/SecretNotes/views.py) by:
 	- commenting out lines 29 and 52
