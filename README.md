@@ -72,7 +72,7 @@ In [views.py](./SecretNotesApp/SecretNotes/views.py):
 1. Comment away lines 69-71
 2. Remove the comments from the line 74
 
-In the project's repository on Github, there is a backup for the database under the name [db2.sqlite](./SecretNotesApp/db2.sqlite3), which you can use to restore the database file and continue using the program. 
+In the project's repository on Github, there is a backup for the database under the name [db2.sqlite3](./SecretNotesApp/db2.sqlite3), which you can use to restore the database file and continue using the program. 
 
 
 
@@ -152,7 +152,7 @@ As a result of fixing the cryptographic fault, the string-format notes become by
 	- ```python manage.py makemigrations SecretNotes```
 	- ```python manage.py migrate```
 
-4. If you encounter problems, you can remove the table using the SQLite command ```DROP TABLE 'SecretNotes_secretnote';``` or copy the database backup file [db2_encrypted.sqlite](./SecretNotesApp/db2_encrypted.sqlite3) and rename it to db.sqlite3. After this run the commands from step 3.
+4. If you encounter problems, you can remove the table using the SQLite command ```DROP TABLE 'SecretNotes_secretnote';``` or copy the database backup file [db2_encrypted.sqlite3](./SecretNotesApp/db2_encrypted.sqlite3) and rename it to db.sqlite3. After this run the commands from step 3.
 
 5. Add encryption to [views.py](./SecretNotesApp/SecretNotes/views.py) by:
 	- commenting out lines 29 and 52
