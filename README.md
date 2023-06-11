@@ -16,8 +16,8 @@ This project contains 4 errors from the OWASP 2021 list and CSRF.
 
 ### Instructions for the database: 
 
-1. Initially, use the default database file [db.sqlite](./SecretNotesApp/db.sqlite3)
-2. The database files [db2.sqlite](./SecretNotesApp/db2.sqlite3) and [db2_encrypted.sqlite](./SecretNotesApp/db2_encrypted.sqlite3) are backup files from which you can restore a working database if necessary. 
+1. Initially, use the default database file [db.sqlite3](./SecretNotesApp/db.sqlite3)
+2. The database files [db2.sqlite3](./SecretNotesApp/db2.sqlite3) and [db2_encrypted.sqlite3](./SecretNotesApp/db2_encrypted.sqlite3) are backup files from which you can restore a working database if necessary. 
 3. If you change the content of the database file from the backup (still keep the default name db.sqlite3!), or you encounter other problems with the database, you may have to initialize the database again with the following commands:
 
 	```
