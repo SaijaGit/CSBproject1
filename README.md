@@ -119,7 +119,7 @@ Enable the csrf_token in the “Add” form of the index.html by removing the co
 - Remove comment tags from index.html lines 132 & 134.
 
 Comment out the @csrf_exempt from the addView function:
--Comment out the line 14 in [views.py](./SecretNotesApp/SecretNotes/views.py)
+- Comment out the line 14 in [views.py](./SecretNotesApp/SecretNotes/views.py)
 
 
 
